@@ -1,0 +1,113 @@
+/* Root Variables for Light Theme */
+:root {
+    --bg-color: #f9f9f9;
+    --text-color: #1a1a1a;
+    --accent-color: #007bff;
+    --button-bg: #ffffff;
+    --button-text: #000000;
+  }
+  
+  /* Dark Theme Variables */
+  .dark-theme {
+    --bg-color: #121212;
+    --text-color: #f0f0f0;
+    --accent-color: #ff6b6b;
+    --button-bg: #333333;
+    --button-text: #ffffff;
+  }
+  
+  /* Global Styles */
+  body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.5s ease, color 0.5s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  /* Container */
+  .container {
+    text-align: center;
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+  }
+  
+  /* Toggle Button Styles */
+  .toggle-wrapper {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 30px;
+  }
+  
+  .toggle-checkbox {
+    display: none;
+  }
+  
+  .toggle-label {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--button-bg);
+    border-radius: 30px;
+    padding: 0 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  .toggle-ball {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 24px;
+    height: 24px;
+    background-color: var(--accent-color);
+    border-radius: 50%;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    z-index: 2;
+  }
+  
+  /* Position ball for dark theme */
+  .toggle-checkbox:checked + .toggle-label .toggle-ball {
+    transform: translateX(30px);
+  }
+  
+  /* Icon Styles */
+  .toggle-icon {
+    font-size: 14px;
+    z-index: 1;
+    opacity: 0.5;
+  }
+  
+  .light-icon {
+    color: #f9d71c;
+  }
+  
+  .dark-icon {
+    color: #ffeaa7;
+    opacity: 0;
+  }
+  
+  /* Swap icon visibility when checked */
+  .toggle-checkbox:checked + .toggle-label .light-icon {
+    opacity: 0;
+  }
+  
+  .toggle-checkbox:checked + .toggle-label .dark-icon {
+    opacity: 1;
+  }
+  
